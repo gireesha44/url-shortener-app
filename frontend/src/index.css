@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-background text-text antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-muted/20 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card border border-border rounded-xl shadow-premium overflow-hidden;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-[#FF9CAF] text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-200 active:scale-95 flex items-center justify-center gap-2 shadow-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-white border-2 border-border hover:border-primary text-text font-bold py-2.5 px-6 rounded-lg transition-all duration-200 active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .input-field {
+    @apply bg-white border-2 border-border rounded-lg px-4 py-3 text-text font-medium placeholder:text-muted/60 outline-none focus:border-primary transition-all shadow-sm;
+  }
+
+  .badge {
+    @apply px-3 py-1 rounded-full text-xs font-bold bg-border text-muted uppercase tracking-wider;
+  }
+  
+  .badge-pink {
+    @apply px-3 py-1 rounded-full text-xs font-bold bg-primary-soft text-[#D16B7A] border border-[#E9A9B5] uppercase tracking-wider;
+  }
+}
+
+/* Custom theme variables for Tailwind v4 */
+@theme {
+  --color-background: #FFFFFF;
+  --color-secondary: #F8F9FA; /* Off-white for subtle sections */
+  --color-card: #F2C7C7;      /* Soft Pink for cards */
+  
+  --color-primary: #FFB7C5;      /* Main Pink Accent */
+  --color-primary-soft: #F2C7C7; /* Soft Pink Highlight */
+  --color-green-accent: #D5F3D8;  /* Success/Green Accent */
+  
+  --color-text: #2D3748;         /* Dark charcoal for readability on white */
+  --color-muted: #718096;
+  --color-border: #E2E8F0;
+  
+  --font-sans: "Inter", "sans-serif";
+  
+  --shadow-premium: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 12px -2px rgba(0, 0, 0, 0.03);
+}
